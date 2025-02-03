@@ -9,16 +9,19 @@ import SwiftUI
 import AVFoundation
 
 struct ContentView: View {
-    @State var countdownTimer: Int = 1500
+    @State var countdownTimer: Int = 5
     @State var timerStringValue: String = "00:00" // value shows up on display
     @State var timerRunning = false
-    
     @State var timerString: String = "Study Time"
     
+    //how many loops users did
     @State var loops: Int = 0
     
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var timerSelection: String = "25/5"
+    let timerSelections: [String] = ["25/5", "50/10"]
     
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let fileName = "pomoCount.txt"
     
     var body: some View {
@@ -28,8 +31,30 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Text("POMODORO")
-                    .font(.custom("DNFBitBitv2", size: 25))
+                HStack {
+                    Text("POMODORO")
+                        .font(.custom("DNFBitBitv2", size: 25))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 20)
+                    
+                    Button {
+                        //navigation link to instruction
+                    } label: { Image(systemName: "questionmark.circle") }
+                        .font(.system(size: 30))
+                        .padding(.trailing, 20)
+                        .frame(alignment: .trailing)
+                }
+                
+                Picker("Select Timer", selection: $timerSelection) {
+                    ForEach(timerSelections, id: \.self) { options in
+                        Text(options).tag(options)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                .onChange(of: timerSelection) {
+                    selectionChanged()
+                }
                 
                 Spacer()
                 
@@ -51,10 +76,10 @@ struct ContentView: View {
                             // if 25 min timer, which is Study Time is done, it will automatically add 1 min timer, which is Break Time
                             if timerString == "Study Time" {
                                 timerString = "Break Time"
-                                countdownTimer = 300
+                                countdownTimer = timerSelection == "25/5" ? 3 : 6
                             } else {
                                 timerString = "Study Time"
-                                countdownTimer = 1500
+                                countdownTimer = timerSelection == "25/5" ? 5 : 10
                                 loops += 1
                                 saveData()
                             }
@@ -91,7 +116,7 @@ struct ContentView: View {
             .onAppear {
                 loadData()
                 updateTimerStringValue()
-                setupAudioSession() // 오디오 세션 설정
+                setupAudioSession()
             }
         }
     }
@@ -112,6 +137,17 @@ struct ContentView: View {
     
     func stopTimer() {
         timerRunning = false
+    }
+    
+    func selectionChanged() {
+        timerRunning = false
+        
+        if timerString == "Study Time" {
+            countdownTimer = timerSelection == "25/5" ? 5 : 10
+        } else {
+            countdownTimer = timerSelection == "25/5" ? 3 : 7
+        }
+        updateTimerStringValue()
     }
     
     func updateTimerStringValue() {
