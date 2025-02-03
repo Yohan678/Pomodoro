@@ -35,9 +35,6 @@
 			membershipExceptions = (
 				Info.plist,
 			);
-			platformFiltersByRelativePath = {
-				Chosun.ttf = (ios, );
-			};
 			target = DBA562522D503A94000633CA /* Pomodoro */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
