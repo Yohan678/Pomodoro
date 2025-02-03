@@ -26,15 +26,17 @@ struct ContentView: View {
             
             VStack {
                 Text("POMODORO")
-                    .font(.system(size: 30, weight: .light))
+                    .font(.custom("DNFBitBitv2", size: 25))
                 
                 Spacer ()
                 
                 
                 Text("how many POMO : \(loops)")
+                    .font(.custom("DNFBitBitv2", size: 13))
+                    
                 Text(timerString)
                     .padding()
-                    .font(.system(size: 25, weight: .light))
+                    .font(.custom("DNFBitBitv2", size: 30))
                 
                 
                 Text(timerStringValue)
@@ -57,7 +59,7 @@ struct ContentView: View {
                             updateTimerStringValue()
                         }
                     }
-                    .font(.system(size: 55, weight: .bold))
+                    .font(.custom("DNFBitBitv2", size: 50))
                     .background(.gray, in: RoundedRectangle(cornerRadius: 20))
                 
                 Spacer()
@@ -95,6 +97,18 @@ struct ContentView: View {
         
         timerStringValue = String(format: "%02d:%02d", minutes, seconds)
     }
+    
+    /* check font's name in project
+    init() {
+        for familyName in UIFont.familyNames {
+            print(familyName)
+            
+            for fontName in UIFont.fontNames(forFamilyName: familyName) {
+                print("--\(fontName)")
+            }
+        }
+    }
+    */
 }
 
 #Preview {

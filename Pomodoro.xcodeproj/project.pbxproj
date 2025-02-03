@@ -24,14 +24,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DBA562532D503A94000633CA /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBA562632D503A96000633CA /* PomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBA5626D2D503A96000633CA /* PomodoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBA562DC2D509045000633CA /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBA562DD2D509045000633CA /* PomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBA562DE2D509045000633CA /* PomodoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DBA562A12D508C6B000633CA /* Exceptions for "Pomodoro" folder in "Pomodoro" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			platformFiltersByRelativePath = {
+				Chosun.ttf = (ios, );
+			};
+			target = DBA562522D503A94000633CA /* Pomodoro */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DBA562552D503A94000633CA /* Pomodoro */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DBA562A12D508C6B000633CA /* Exceptions for "Pomodoro" folder in "Pomodoro" target */,
+			);
 			path = Pomodoro;
 			sourceTree = "<group>";
 		};
@@ -78,18 +94,10 @@
 				DBA562552D503A94000633CA /* Pomodoro */,
 				DBA562662D503A96000633CA /* PomodoroTests */,
 				DBA562702D503A96000633CA /* PomodoroUITests */,
-				DBA562542D503A94000633CA /* Products */,
+				DBA562DC2D509045000633CA /* Pomodoro.app */,
+				DBA562DD2D509045000633CA /* PomodoroTests.xctest */,
+				DBA562DE2D509045000633CA /* PomodoroUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		DBA562542D503A94000633CA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DBA562532D503A94000633CA /* Pomodoro.app */,
-				DBA562632D503A96000633CA /* PomodoroTests.xctest */,
-				DBA5626D2D503A96000633CA /* PomodoroUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +122,7 @@
 			packageProductDependencies = (
 			);
 			productName = Pomodoro;
-			productReference = DBA562532D503A94000633CA /* Pomodoro.app */;
+			productReference = DBA562DC2D509045000633CA /* Pomodoro.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DBA562622D503A96000633CA /* PomodoroTests */ = {
@@ -137,7 +145,7 @@
 			packageProductDependencies = (
 			);
 			productName = PomodoroTests;
-			productReference = DBA562632D503A96000633CA /* PomodoroTests.xctest */;
+			productReference = DBA562DD2D509045000633CA /* PomodoroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		DBA5626C2D503A96000633CA /* PomodoroUITests */ = {
@@ -160,7 +168,7 @@
 			packageProductDependencies = (
 			);
 			productName = PomodoroUITests;
-			productReference = DBA5626D2D503A96000633CA /* PomodoroUITests.xctest */;
+			productReference = DBA562DE2D509045000633CA /* PomodoroUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -196,7 +204,7 @@
 			mainGroup = DBA5624A2D503A94000633CA;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = DBA562542D503A94000633CA /* Products */;
+			productRefGroup = DBA5624A2D503A94000633CA;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -398,6 +406,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pomodoro/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -426,6 +435,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pomodoro/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pomodoro/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
