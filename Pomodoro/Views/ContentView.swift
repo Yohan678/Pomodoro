@@ -50,6 +50,7 @@ struct ContentView: View {
                     Picker("Select Timer", selection: $timerSelection) {
                         ForEach(timerSelections, id: \.self) { options in
                             Text(options).tag(options)
+                                .font(.custom("DNFBitBitv2", size: 10))
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -155,9 +156,9 @@ struct ContentView: View {
         timerRunning = false
         
         if timerString == "Study Time" {
-            countdownTimer = timerSelection == "25/5" ? 5 : 10
+            countdownTimer = timerSelection == "25/5" ? 1500 : 3000
         } else {
-            countdownTimer = timerSelection == "25/5" ? 3 : 7
+            countdownTimer = timerSelection == "25/5" ? 300 : 600
         }
         updateTimerStringValue()
     }
